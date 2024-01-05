@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart zásobník</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <img src="text.JPEG">
+
+    <main>
+        <form onsubmit="return false;">
+            <div class="container">
+                <div class="input-container">
+                    <div class="question">
+                        <label for="medium">Medium:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="medium" name="medium">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Enter the name of the stored gas, or chemical formula</span>
+                    </div>
+                </div>
+            
+                <div class="input-container">
+                    <div class="question">
+                        <label for="maxPressure">Max pressure:</label>
+                    </div>
+                    <div class="response">
+                        <input type="number" id="maxPressure" name="maxPressure">
+                        <span class="unit">bars</span>
+                    </div>
+                    <div class="description">
+                        <span>Enter the required maximum working pressure of the medium</span>
+                    </div>
+                </div>
+
+                <div class="container1"> 
+                    <span class="multi"> Fill in one of the possibilities: </span>     
+                        <div class="input-container">
+                            <div class="question">
+                                <label for="totalCapacity">Total capacity:</label>
+                            </div>
+                            <div class="response">
+                                <input type="number" id="totalCapacity" name="totalCapacity">
+                                <select name="выбор" class="custom-select">
+                                   
+                                    <option value="kg">kg</option>
+                                    <option value="Nm3">Nm3</option>
+                                </select>
+                            </div>
+                            <div class="description">
+                                <span class="descrition">Enter the maximum amount of gas (in kg or volume in Nm³) you want to store<br>(At standard conditions: 0 st.C, 101 325 Pa)</span>
+                            </div>
+                        </div>
+
+                        <div class="input-container">
+                            <div class="question">
+                                <label for="totalWaterVolume">Total water volume:</label>
+                            </div>
+                            <div class="response">
+                                <input type="number" id="totalWaterVolume" name="totalWaterVolume">
+                                <span class="unit">l</span>
+                            </div>
+                            <div class="description">
+                                <span class="descrition">Do you require a specific water volume</span>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="pressureCycles">Number of pressure stages:</label>
+                    </div>
+                    <div class="response">
+                        <input type="number" id="pressureCycles" name="pressureCycles">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span class="descrition">Do you want separate sections in the tank for work with different pressures (e.g., for cascading discharges) - Enter the number</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="clenenisekci">Requirement for compartmentalization:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="clenenisekci" name="clenenisekci">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span> Enter if you have special requirements for individual sections</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="bp">Safety features:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="bpInput" name="bp">
+                        <div class="multi-select-group">
+                        <div class="option-button" data-value="pv">Safety valve</div>
+                        <div class="option-button" data-value="tp">Thermal fuse</div>
+                        <div class="option-button" data-value="nic">None</div>   
+                    </div>
+                    </div>
+                    <div class="description">
+                        <span></span>
+                    </div>
+                </div>
+               
+                <div class="input-container">
+                    <div class="question">
+                        <label for="vstup">Method of connection INLET:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="vstup" name="vstup">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Enter – e.g., valve, hose, etc.</span>
+                    </div>
+                </div>
+
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="vystup">Method of connection OUTLET:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="vystup" name="vystup">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Enter – e.g., valve, hose, etc.</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="stohovani">Stacking:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="stohovani" name="stohovani">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>State whether it will be possible (or you require) to stack individual containers forming the storage tank</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="msz">Handling with the storage:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="msz" name="msz">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>State the expected handling equipment – e.g., crane, forklift, etc. </span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="place">Choose the location of installation:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="placeInput" name="place">
+                        <div class="button-group">
+                            <div class="option-button" data-value="venku">Outside</div>
+                            <div class="option-button" data-value="uvnitr">Inside</div>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="us">Location (country):</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="us" name="us">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Enter the country where the storage tank will be used</span>
+                    </div>
+                </div>                   
+                    
+                <div class="input-container">
+                    <div class="question">
+                        <label for="teplota">Ambient temperature (range):</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="tempreture" name="tempreture">
+                        <span class="unit">°C</span>
+                    </div>
+                    <div class="description">
+                        <span>State the range of ambient temperature for the storage tank</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="ucel">Purpose:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="ucelInput" name="ucel">
+                        <div class="button-group">
+                        <div class="option-button" data-value="transportni">Transportable</div>
+                        <div class="option-button" data-value="stacionarni">Stationary</div>
+                    </div>
+                </div>
+                    <div class="description">
+                        <span>Select whether the storage tank will be stationary or used for transport</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="dispecink">Dispatching:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="dispecinkInput" name="dispecink">
+                        <div class="button-group">
+                            <div class="option-button" data-value="vzdalenerizeni">Remote control</div>
+                            <div class="option-button" data-value="dohled">Supervision</div>
+                            <div class="option-button" data-value="nic">None</div>                          
+                        </div>
+                    </div>
+                    <div class="description">
+                        <span>Select if you want to implement remote dispatching workstation</span>
+                    </div>
+                </div>
+                
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="automatizace">Level of automation:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="automatizaceInput" name="automatizace">
+                        <div class="button-group">
+                        <div class="option-button" data-value="monitoring">Monitoring</div>
+                        <div class="option-button" data-value="rizeni">Control</div>
+                        <div class="option-button" data-value="nic">None</div>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="dispecinkHW">Dispatching HW:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="dispecinkHWInput" name="dispecinkHW">
+                            <div class="multi-select-group">
+                            <div class="option-button" data-value="pc">PC</div>
+                            <div class="option-button" data-value="server">Server</div>
+                            <div class="option-button" data-value="nic">None</div>                
+                        </div>
+                    </div>
+                    <div class="description">
+                        <span>Select if you want to equip the dispatching workstation with hardware</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="komunikace">Remote communication:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="komunikaceInput" name="komunikace">
+                            <div class="multi-select-group">
+                                <div class="option-button" data-value="lan">LAN</div>
+                                <div class="option-button" data-value="antena">Antenna</div>
+                                <div class="option-button" data-value="nic">None</div>
+                            </div>
+                    </div>
+                    <div class="description">
+                        <span>Select the method of communication with the dispatching workstation</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="lokalizace">Localization of containers using GPS:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="lokalizaceInput" name="lokalizace">
+                            <div class="button-group">
+                        <div class="option-button" data-value="ano">Yes</div>
+                        <div class="option-button" data-value="ne">No</div>
+                    </div>
+                </div>
+                    <div class="description">
+                        <span>Select if you want to track the position of the storage tank</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="lautomatizace">Local automation:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="lautomatizaceInput" name="lautomatizace">
+                        <div class="multi-select-group-only">
+                        <div class="option-button" data-value="plc">PLC</div>
+                        <div class="option-button" data-value="op">OP</div>
+                        <div class="option-button" data-value="tablet">Tablet</div>
+                        <div class="option-button" data-value="only">Only signal output</div>   
+                        <div class="option-button" data-value="nic">None</div>             
+                    </div>
+                </div>
+                    <div class="description">
+                        <span>Select if you want to equip the storage tank with automation technology</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="baterie">Baterie (142Ah@24VDC):</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="baterieInput" name="baterie">
+                            <div class="button-group">
+                        <div class="option-button" data-value="ano">Yes</div>
+                        <div class="option-button" data-value="ne">No</div>
+                    </div>
+                </div>
+                    <div class="description">
+                        <span>Select if you want to have a backup energy source</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="osvetleni">Lighting:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="osvetleniInput" name="osvetleni">
+                        <div class="multi-select-group">
+                        <div class="option-button" data-value="Předloha">Proposal</div>
+                        <div class="option-button" data-value="Rozváděč">Distribution</div>
+                        <div class="option-button" data-value="Okoli">Surrounding</div>
+                        <div class="option-button" data-value="nic">None</div>      
+                    </div>
+                    </div>
+                    <div class="description">
+                        <span>Select if you want lighting for the storage tank and its parts</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="tepkomf">Thermal comfort:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="tepkomfInput" name="tepkomf">
+                        <div class="multi-select-group">
+                        <div class="option-button" data-value="Vytápění">Heating</div>
+                        <div class="option-button" data-value="Chlazení">Cooling</div>
+                        <div class="option-button" data-value="nic">None</div>
+                    </div>
+                    </div>
+                    <div class="description">
+                        <span>Select if you require heating or cooling of the interior space of the storage tank</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="mp">Measurement of flow with a mass flowmeter:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="mpInput" name="mp">
+                        <div class="button-group">
+                        <div class="option-button" data-value="ano">Yes</div>
+                        <div class="option-button" data-value="ne">No</div>
+                    </div>
+                    </div>
+                    <div class="description">
+                        <span>Select if you require accurately measuring the issued amount of gas - for invoicing purposes, etc.</span>
+                    </div>
+                </div>
+
+                
+                <div class="input-container">
+                    <div class="question">
+                        <label for="unik">H2 leak sensor:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="unikInput" name="unik">
+                        <div class="button-group">
+                        <div class="option-button" data-value="ano">Yes</div>
+                        <div class="option-button" data-value="ne">No</div>
+                    </div>
+                    </div>
+                    <div class="description">
+                        <span>Select if you require this safety feature</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="sz">Flood sensor:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="szInput" name="sz">
+                        <div class="button-group">
+                        <div class="option-button" data-value="ano">Yes</div>
+                        <div class="option-button" data-value="ne">No</div>
+                    </div>
+                    </div>
+                    <div class="description">
+                        <span>Select if you require this safety feature</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="ak">Accelerometer for detection of shocks (also in case of theft):</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="akInput" name="ak">
+                        <div class="button-group">
+                        <div class="option-button" data-value="ano">Yes</div>
+                        <div class="option-button" data-value="ne">No</div>
+                    </div>
+                    </div>
+                    <div class="description">
+                        <span>Select if you require this safety feature</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="ps">Access system:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="psInput" name="ps">
+                        <div class="multi-select-group">
+                        <div class="option-button" data-value="kod">Code</div>
+                        <div class="option-button" data-value="oblicej">Face</div>
+                        <div class="option-button" data-value="otiskprstu">Fingerprint</div>
+                        <div class="option-button" data-value="nic">None</div>
+                    </div>
+                    </div>
+                    <div class="description">
+                        <span>Select if you require this safety feature</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="pcidlo">Motion detector:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="pcidloInput" name="pcidlo">
+                        <div class="button-group">
+                        <div class="option-button" data-value="ano">Yes</div>
+                        <div class="option-button" data-value="ne">No</div>
+                    </div>
+                    </div>
+                    <div class="description">
+                        <span>Select if you require this safety feature</span>
+                    </div>
+                </div>
+                
+                <div class="input-container">
+                    <div class="question">
+                        <label for="ks">Camera system:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="ksInput" name="ks">
+                        <div class="multi-select-group">
+                        <div class="option-button" data-value="Předloha">Proposal</div>
+                        <div class="option-button" data-value="Rozváděč">Distribution</div>
+                        <div class="option-button" data-value="Okoli">Surrounding</div>
+                        <div class="option-button" data-value="nic">None</div>   
+                    </div>
+                    </div>
+                    <div class="description">
+                        <span>Select if you require this safety feature</span>
+                    </div>
+                </div>
+
+
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="info">Additional information:</label>
+                     </div>
+                    <div class="response">
+                        <input type="text" id="info" name="info">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span></span>
+                    </div>
+                    </div>
+
+                <div class="input-container">  
+                     <button id="openPopupButton">Ask for price</button>
+                </div>
+        </form>
+
+   </main>
+   
+
+
+   <div id="popup" class="popup">
+       <div class="popup-content">
+           <span id="closePopupButton" class="close-popup-button">&times;</span>
+           <h1>Price Inquiry</h1>
+           <h3>Don't hesitate and contact us!</h3>
+           <form id="priceRequestForm">
+                <label for="name">Name and surname:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="firma">Name of Your company:</label>
+                <input type="text" id="firma" name="firma" required>  
+                <label for="projekt">Name of Your project:</label>
+                <input type="text" id="projekt" name="projekt" required>              
+                <div class="consent">
+                    <input type="checkbox" id="consentCheckbox" required>
+                    <label for="consentCheckbox">I agree to the processing of personal data in accordance with the personal data protection policy.</label>
+                </div>
+                <button type="submit">Send</button>
+            </form>
+       </div>
+   </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+
+<footer>
+    <p></p>
+</footer>
+
+</html>
+

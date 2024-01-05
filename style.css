@@ -1,0 +1,336 @@
+
+ 
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set background and text colors */
+  body {
+    background-color: #043641;
+    color: #E0F4F5;
+    font-family: Arial, sans-serif;
+  }
+  
+
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  /* Navigation styles */
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: #141414;
+    padding: 10px 0;
+  }
+  
+
+  nav li {
+    margin: 0 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #E0F4F5;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  /* Main content styles */
+  main {
+    text-align: center;
+    padding: 30px 0;
+  }
+  
+  .container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1d4c55;;
+    border: 1px solid #63898B;
+    border-radius: 10px;
+    align-items: flex-start;
+  }
+  
+  .container1 {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #043641;;
+    border: 1px solid #63898B;
+    border-radius: 10px;
+    align-items: flex-start;
+  }
+  
+ 
+img {
+  width: 80%;
+ 
+}
+
+  /* Input container styles */
+  .input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-container label {
+    font-size: 20px;
+    text-align: left;
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .input-container input[type="number"],
+  .input-container input[type="text"]
+  {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    flex: 1;
+    max-width: 200px;
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    display: block;
+    background-color: #E0F4F5;
+    color: #000000;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Выравнивание элементов по центру вертикально */
+    margin-bottom: 20px;
+  }
+  
+   .input-container .question {
+    flex: 1;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: left;
+  }
+  .multi {
+    font-size: 16px; /* Размер шрифта */
+    color: #E0F4F5; /* Цвет текста */
+    font-weight: bold; /* Полужирный шрифт */
+    font-size: 20px;
+    text-align: left;
+
+    margin-left: 10px;
+  }
+
+  
+  .input-container .response {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    text-align: right;
+  }
+  .input-container .unit {
+    flex: 0;
+    text-align: left; /* Выравнивание единиц измерения по левому краю */
+    margin-left: 10px; /* Отступ между полем ввода и единицей измерения */
+  }
+  
+  .input-container .description {
+    flex: 4;
+    font-size: 16px;
+    color: #63898B;
+    text-align: left;
+  }
+  /* Submit button styles */
+  input[type="submit"] {
+    background-color: #141414;
+    color: #E0F4F5;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    align-items: center; /* Добавьте этот стиль, чтобы кнопка была посередине */
+    margin: 0 auto;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #63898B;
+  }
+  select {
+    flex: 1;
+    max-width: 200px;
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+   
+    border-radius: 5px;
+    display: block;
+    background-color: #63898B;
+    color: #000000;
+   
+    cursor: pointer; /* Добавляем курсор "указатель" для элемента select */
+  }
+  
+
+  .option-button{
+    border: 1px solid #63898B;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;/* Плавное изменение цветов при наведении */
+
+
+}
+
+
+.option-button.selected {
+  background-color: #ffffff; /* Цвет фона выбранной кнопки */
+  color: #000000; /* Цвет текста на выбранной кнопке */
+}
+  
+/* Стили для кнопки открытия попапа */
+#openPopupButton {
+  background-color: #141414;
+    color: #E0F4F5;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    align-items: center; /* Добавьте этот стиль, чтобы кнопка была посередине */
+    margin: 0 auto;
+}
+
+#openPopupButton:hover{
+  background-color: #63898B;
+}
+
+/* Стили для попапа (скрытого по умолчанию) */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #E0F4F5;
+  padding: 20px;
+  width: 50%;
+  height: 65%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-left: 25%;
+  margin-top: 10%;
+  color: #000000;
+}
+
+.close-popup-button {
+  position: absolute;
+  top: 10%;
+  right: 20%;
+  font-size: 30px;
+  cursor: pointer;
+  color: #E0F4F5;
+}
+
+
+
+
+/* Стилизация меток (labels) */
+label {
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Стилизация полей ввода (input) */
+input[type="text"],
+input[type="email"] {
+  width: 50%;
+  max-width: 50%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #63898B;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+/* Стилизация кнопки отправки (submit) */
+button[type="submit"] { 
+    background-color: #05BEC2;
+    color: #fff;
+    display: block; /* Сделаем кнопку блочным элементом, чтобы она находилась на новой строке */
+    margin: 0 auto; /* Горизонтальное выравнивание по центру */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px; /* Добавляем отступ сверху */
+}
+
+button[type="submit"]:hover {
+  background-color: #043641;
+}
+.consent {
+  display: inline-flex; /* Делаем flex-контейнер */
+  align-items: center; /* Выравниваем элементы по вертикали */
+ 
+  text-align: center;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px; /* Отступ справа от квадратика */
+}
+
+
+.custom-select {
+  max-width: 80px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #043641;
+  color: #E0F4F5;
+}
+
+  /* Footer styles */
+  footer {
+    text-align: center;
+    background-color: #141414;
+    padding: 10px 0;
+  }
+  
+  footer p {
+    font-size: 16px;
+    color: #ffffff;
+  }
+  
